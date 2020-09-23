@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'widgets/categories.dart';
+import 'widgets/product_list.dart';
 
 const screenPadding = 16.0;
 
@@ -27,6 +28,7 @@ class Products extends StatelessWidget {
               ),
             ),
             Categories(),
+            ProductList(),
           ],
         ),
       ),
