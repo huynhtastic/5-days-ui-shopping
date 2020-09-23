@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-const screenPadding = 16.0;
+import 'widgets/categories.dart';
 
-const productNames = [
-  'Hand bags',
-  'Jewelery',
-  'Footwear',
-  'Dresses',
-  'Tops',
-  'Pants',
-];
+const screenPadding = 16.0;
 
 class Products extends StatelessWidget {
   const Products({Key key}) : super(key: key);
@@ -31,26 +24,7 @@ class Products extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16.0),
-            SizedBox(
-              height: 24,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: productNames.length,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.only(right: 16.0),
-                  child: Text(
-                    productNames[index],
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                      // TODO: Selected index
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            Categories(),
           ],
         ),
       ),
