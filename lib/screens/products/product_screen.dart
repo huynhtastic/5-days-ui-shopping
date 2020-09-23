@@ -13,15 +13,17 @@ class Products extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Women',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: screenPadding),
+              child: Text(
+                'Women',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             Categories(),
