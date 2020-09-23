@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_shopping/utils/utils.dart';
 
 const categories = [
   'Hand bags',
@@ -8,6 +9,11 @@ const categories = [
   'Tops',
   'Pants',
 ];
+
+const categoryTextStyle =
+    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold);
+
+const widgetPadding = 8.0;
 
 class Categories extends StatefulWidget {
   Categories({Key key}) : super(key: key);
@@ -24,7 +30,7 @@ class _CategoriesState extends State<Categories> {
     return SizedBox(
       height: 44.0,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+        padding: const EdgeInsets.all(widgetPadding),
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
@@ -37,23 +43,22 @@ class _CategoriesState extends State<Categories> {
   Widget buildCategory(context, index) => GestureDetector(
         onTap: () => setState(() => selectedIndex = index),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: widgetPadding),
           child: Container(
             child: Column(
               children: [
                 Text(
                   categories[index],
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
+                  style: categoryTextStyle.copyWith(
                     color: index == selectedIndex ? Colors.black : Colors.grey,
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 4),
+                  margin: EdgeInsets.only(top: widgetPadding / 2),
                   height: 2,
-                  width: _getTextSize(categories[index]).width,
-                  color: selectedIndex == index
+                  width:
+                      getTextSize(categories[index], categoryTextStyle).width,
+                  color: index == selectedIndex
                       ? Colors.black
                       : Colors.transparent,
                 )
@@ -62,20 +67,4 @@ class _CategoriesState extends State<Categories> {
           ),
         ),
       );
-}
-
-Size _getTextSize(String text) {
-  final textPainter = TextPainter(
-      text: TextSpan(
-        text: text,
-        style: TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      maxLines: 1,
-      textDirection: TextDirection.ltr)
-    ..layout(minWidth: 0, maxWidth: double.infinity);
-
-  return textPainter.size;
 }
