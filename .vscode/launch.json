@@ -5,6 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "PH-1",
+            "type": "dart",
+            "request": "launch",
+            "args": [
+                "-d",
+                "PM1LHMA790904907",
+            ],
+        },
+        {
             "name": "PH-1 LAN",
             "request": "launch",
             "type": "dart",

@@ -39,10 +39,21 @@ class ProductList extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 8.0),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(product.title),
-            Text(product.price.toString()),
+            Text(
+              product.title,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 16.0,
+              ),
+            ),
+            Text(
+              '\$${product.price}0',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ],
