@@ -6,8 +6,9 @@ import 'widgets/product_list.dart';
 
 const screenPadding = 16.0;
 
-class Products extends StatelessWidget {
-  const Products({Key key}) : super(key: key);
+class ProductsScreen extends StatelessWidget {
+  static const route = 'products';
+  const ProductsScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
