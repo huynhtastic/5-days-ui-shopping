@@ -3,6 +3,7 @@ import 'package:one_shopping/models/product.dart';
 import 'package:one_shopping/widgets/custom_app_bar.dart';
 
 import 'widgets/details_title.dart';
+import 'widgets/price_with_image.dart';
 
 class DetailsScreenArgs {
   final Product product;
@@ -30,6 +31,8 @@ class DetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             DetailsTitle(product.title),
+            SizedBox(height: 40.0),
+            PriceWithImage(product),
           ],
         ),
       ),
