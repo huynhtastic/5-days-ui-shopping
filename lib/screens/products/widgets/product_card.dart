@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:one_shopping/models/product.dart';
+import 'package:one_shopping/screens/details/details_screen.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -39,12 +40,16 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _buildBody(),
-        SizedBox(height: 8.0),
-        _buildFooter(),
-      ],
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, DetailsScreen.route,
+          arguments: DetailsScreenArgs(product)),
+      child: Column(
+        children: [
+          _buildBody(),
+          SizedBox(height: 8.0),
+          _buildFooter(),
+        ],
+      ),
     );
   }
 }
