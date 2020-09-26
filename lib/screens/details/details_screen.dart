@@ -11,7 +11,6 @@ class DetailsScreenArgs {
   DetailsScreenArgs(this.product);
 }
 
-double _screenPadding = 24.0;
 TextStyle _textStyle = TextStyle(color: Colors.white);
 
 class DetailsScreen extends StatelessWidget {
@@ -26,13 +25,24 @@ class DetailsScreen extends StatelessWidget {
       appBar: buildAppBar(context, product.color),
       body: Container(
         color: product.color,
-        padding: EdgeInsets.all(_screenPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             DetailsTitle(product.title),
             SizedBox(height: 40.0),
-            PriceWithImage(product),
+            Stack(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 40),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32.0),
+                    color: Colors.white,
+                  ),
+                  height: 800,
+                ),
+                PriceWithImage(product),
+              ],
+            ),
           ],
         ),
       ),

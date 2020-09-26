@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+double _screenPadding = 24.0;
 TextStyle _textStyle = TextStyle(color: Colors.white);
 
 class DetailsTitle extends StatelessWidget {
@@ -8,21 +9,24 @@ class DetailsTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Aristocratic Hand Bag',
-          style: _textStyle,
-        ),
-        Text(
-          title,
-          style: _textStyle.copyWith(
-            fontSize: 32.0,
-            fontWeight: FontWeight.bold,
+    return Padding(
+      padding: EdgeInsets.all(_screenPadding),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Aristocratic Hand Bag',
+            style: _textStyle,
           ),
-        ),
-      ],
+          Text(
+            title,
+            style: _textStyle.copyWith(
+              fontSize: 32.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
