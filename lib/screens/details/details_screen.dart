@@ -8,6 +8,9 @@ class DetailsScreenArgs {
   DetailsScreenArgs(this.product);
 }
 
+double _screenPadding = 24.0;
+TextStyle _textStyle = TextStyle(color: Colors.white);
+
 class DetailsScreen extends StatelessWidget {
   static const route = 'details';
 
@@ -20,7 +23,23 @@ class DetailsScreen extends StatelessWidget {
       appBar: buildAppBar(context, product.color),
       body: Container(
         color: product.color,
-        // child: ,
+        padding: EdgeInsets.all(_screenPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Aristocratic Hand Bag',
+              style: _textStyle,
+            ),
+            Text(
+              product.title,
+              style: _textStyle.copyWith(
+                fontSize: 32.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
