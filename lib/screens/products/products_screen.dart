@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:one_shopping/widgets/custom_app_bar.dart';
 
 import 'widgets/categories.dart';
 import 'widgets/product_list.dart';
@@ -13,7 +13,7 @@ class ProductsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar,
+      appBar: buildAppBar(context, Colors.transparent),
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,28 +36,3 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 }
-
-final appBar = AppBar(
-  backgroundColor: Colors.transparent,
-  elevation: 0.0,
-  leading: IconButton(
-    icon: SvgPicture.asset('assets/icons/back.svg'),
-    onPressed: () {},
-  ),
-  actions: [
-    IconButton(
-      icon: SvgPicture.asset(
-        'assets/icons/search.svg',
-        color: Colors.black,
-      ),
-      onPressed: () {},
-    ),
-    IconButton(
-      icon: SvgPicture.asset(
-        'assets/icons/cart.svg',
-        color: Colors.black,
-      ),
-      onPressed: () {},
-    )
-  ],
-);

@@ -41,8 +41,11 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, DetailsScreen.route,
-          arguments: DetailsScreenArgs(product)),
+      onTap: () => Navigator.pushNamed(
+        context,
+        DetailsScreen.route,
+        arguments: DetailsScreenArgs(product),
+      ),
       child: Column(
         children: [
           _buildBody(),
