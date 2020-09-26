@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:one_shopping/models/product.dart';
 
+import 'product_card.dart';
+
 class ProductList extends StatelessWidget {
   const ProductList({Key key}) : super(key: key);
 
@@ -10,53 +12,19 @@ class ProductList extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: GridView.builder(
-            itemCount: products.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 16.0,
-              mainAxisSpacing: 16.0,
-              childAspectRatio: 0.75,
-            ),
-            itemBuilder: buildProductItem),
+          itemCount: products.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 16.0,
+            mainAxisSpacing: 16.0,
+            childAspectRatio: 0.75,
+          ),
+          itemBuilder: _buildProductCard,
+        ),
       ),
     );
   }
-
-  Widget buildProductItem(context, index) {
-    final product = products[index];
-    return Column(
-      children: [
-        Expanded(
-          child: Container(
-            padding: EdgeInsets.all(16.0),
-            decoration: BoxDecoration(
-              color: product.color,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Hero(
-              tag: product.id.toString(),
-              child: Image.asset(product.image),
-            ),
-          ),
-        ),
-        SizedBox(height: 8.0),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              product.title,
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 16.0,
-              ),
-            ),
-            Text(
-              '\$${product.price}0',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
 }
+
+Widget _buildProductCard(BuildContext context, int index) =>
+    ProductCard(products[index]);
