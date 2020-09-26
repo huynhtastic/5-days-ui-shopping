@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:one_shopping/models/product.dart';
 import 'package:one_shopping/widgets/custom_app_bar.dart';
 
+import 'widgets/details_title.dart';
+
 class DetailsScreenArgs {
   final Product product;
 
@@ -27,17 +29,7 @@ class DetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              'Aristocratic Hand Bag',
-              style: _textStyle,
-            ),
-            Text(
-              product.title,
-              style: _textStyle.copyWith(
-                fontSize: 32.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            DetailsTitle(product.title),
           ],
         ),
       ),
