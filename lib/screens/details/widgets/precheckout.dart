@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:one_shopping/models/product.dart';
 
 import 'color_dots.dart';
+import 'product_size.dart';
 
 class Precheckout extends StatelessWidget {
   final Product product;
@@ -28,7 +29,8 @@ class Precheckout extends StatelessWidget {
         children: [
           Row(
             children: [
-              ColorDots(),
+              Expanded(child: ColorDots()),
+              Expanded(child: ProductSize()),
             ],
           ),
         ],
