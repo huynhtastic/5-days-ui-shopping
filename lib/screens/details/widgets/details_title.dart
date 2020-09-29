@@ -10,7 +10,7 @@ class DetailsTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(_screenPadding),
+      padding: EdgeInsets.symmetric(horizontal: _screenPadding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

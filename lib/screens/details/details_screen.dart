@@ -22,7 +22,6 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: buildAppBar(context, product.color),
       body: Container(
@@ -32,15 +31,12 @@ class DetailsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               DetailsTitle(product.title),
-              SizedBox(height: 40.0),
-              SizedBox(
-                height: size.height,
-                child: Stack(
-                  children: [
-                    Precheckout(product),
-                    PriceWithImage(product),
-                  ],
-                ),
+              SizedBox(height: 32.0),
+              Stack(
+                children: [
+                  Precheckout(product),
+                  PriceWithImage(product),
+                ],
               ),
             ],
           ),
