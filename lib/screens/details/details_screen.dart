@@ -3,6 +3,7 @@ import 'package:one_shopping/models/product.dart';
 import 'package:one_shopping/widgets/custom_app_bar.dart';
 
 import 'widgets/details_title.dart';
+import 'widgets/precheckout.dart';
 import 'widgets/price_with_image.dart';
 
 class DetailsScreenArgs {
@@ -36,41 +37,7 @@ class DetailsScreen extends StatelessWidget {
                 height: size.height,
                 child: Stack(
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: size.height * 0.23),
-                      padding: EdgeInsets.only(
-                        top: size.height * 0.1,
-                        left: 24.0,
-                        right: 24.0,
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(32.0),
-                          topRight: Radius.circular(32.0),
-                        ),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Column(
-                                children: [
-                                  Text('Color'),
-                                  Container(
-                                    child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                      // color: ,
-                                      shape: BoxShape.circle,
-                                    )),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                    Precheckout(product),
                     PriceWithImage(product),
                   ],
                 ),
