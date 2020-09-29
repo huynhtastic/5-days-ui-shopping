@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:one_shopping/models/product.dart';
 
+import 'color_dots.dart';
+
 class Precheckout extends StatelessWidget {
   final Product product;
   const Precheckout(this.product, {Key key}) : super(key: key);
@@ -26,18 +28,7 @@ class Precheckout extends StatelessWidget {
         children: [
           Row(
             children: [
-              Column(
-                children: [
-                  Text('Color'),
-                  Container(
-                    child: DecoratedBox(
-                        decoration: BoxDecoration(
-                      // color: ,
-                      shape: BoxShape.circle,
-                    )),
-                  )
-                ],
-              ),
+              ColorDots(),
             ],
           ),
         ],
