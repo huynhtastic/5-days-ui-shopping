@@ -9,25 +9,34 @@ class PriceWithImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Price', style: _textStyle),
-            SizedBox(height: 8.0),
-            Text(
-              '\$${product.price}0',
-              style: _textStyle.copyWith(
-                fontSize: 32.0,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
-        ),
-        Image.asset(product.image),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: 'Price\n',
+                  style: _textStyle,
+                ),
+                TextSpan(
+                  text: '\$${product.price}0',
+                  style: _textStyle.copyWith(
+                    fontSize: 32.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
+          ),
+          Hero(
+            tag: product.id,
+            child: Image.asset(product.image),
+          ),
+        ],
+      ),
     );
   }
 }
