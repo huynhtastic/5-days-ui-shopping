@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:one_shopping/models/product.dart';
-import 'package:one_shopping/screens/details/widgets/quantity_picker.dart';
 
 import 'color_dots.dart';
 import 'product_size.dart';
+import 'quantity_with_favorite.dart';
 
 class Precheckout extends StatelessWidget {
   final Product product;
@@ -37,7 +37,7 @@ class Precheckout extends StatelessWidget {
           SizedBox(height: 24.0),
           Text(product.description, style: TextStyle(height: 2.0)),
           SizedBox(height: 24.0),
-          QuantityPicker(),
+          QuantityWithFavorite(),
         ],
       ),
     );
