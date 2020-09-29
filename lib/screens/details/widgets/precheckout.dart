@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:one_shopping/models/product.dart';
 
+import 'buy_buttons.dart';
 import 'color_dots.dart';
 import 'product_size.dart';
 import 'quantity_with_favorite.dart';
@@ -18,6 +19,7 @@ class Precheckout extends StatelessWidget {
         top: size.height * 0.1,
         left: 24.0,
         right: 24.0,
+        bottom: 32.0,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -38,6 +40,8 @@ class Precheckout extends StatelessWidget {
           Text(product.description, style: TextStyle(height: 2.0)),
           SizedBox(height: 24.0),
           QuantityWithFavorite(),
+          SizedBox(height: 16.0),
+          BuyButtons(product),
         ],
       ),
     );
